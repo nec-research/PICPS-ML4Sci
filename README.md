@@ -31,10 +31,10 @@ A part of the data used in the submitted paper can be obtained from:
 
 [Ani-1x](https://github.com/aiqm/ANI1x_datasets)
 
-The default path is `./DATAPATH`. Training should be immediately runnable if all preprocessed datasets are downloaded from Zenodo and the directory is properly renamed. Alternatively, the scripts for downloading and preprocessing each individual dataset are in `preprocessing/`. Specify `data_path` for the location of the saved source files, and specify `db_path` for the proprocessed files (Lmdb files for SchNet, DimeNet, etc. or npz files for NequIP). For example, download the MD17 `aspirin` dataset to `DATAPATH` and save processed files to `DBPATH` by running:
+The default path is `./DATAPATH`. Training should be immediately runnable if all preprocessed datasets are downloaded from Zenodo and the directory is properly renamed. Alternatively, the scripts for downloading and preprocessing each individual dataset are in `preprocessing/`. Specify `data_path` for the location of the saved source files, and specify `db_path` for the proprocessed files (Lmdb files for SchNet, DimeNet, etc. or npz files for NequIP). For example, preprocess Ani-1x dataset to `DATAPATH` and save processed files to `DBPATH` by running:
 
 ```
-python preprocessing/md17.py
+python preprocessing/ani-1x_new.py
 ```
 
 All datasets have unit kcal/mol for energy and kcal/mol/$\AA$ for forces. The mean and standard deviation of energy/forces are stored in `metadata.npy`.
