@@ -1,0 +1,7 @@
+pip install matplotlib, pandas, pyyaml, scikit-learn, lmdb
+pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu118
+pip install torch_geometric
+pip install torch_scatter torch_sparse torch_cluster torch_spline_conv -f https://data.pyg.org/whl/torch-2.0.0+cu118.html
+pip install numba, wandb, submitit
+pip install tensorboard, e3nn
+pip install ase, orjson

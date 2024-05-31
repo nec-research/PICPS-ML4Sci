@@ -1,0 +1,36 @@
+trainer: trainer
+
+dataset:
+  src: DATAPATH/ani-1x
+  name: ani1x_vanilla
+  size: 1K
+  normalize_labels: False
+
+logger:
+  name: tensorboard
+  project: mdbench
+
+task:
+  dataset: lmdb
+  description: "Regressing to energies and forces"
+  type: regression
+  metric: mae
+  labels:
+    - potential energy
+  grad_input: atomic forces
+  train_on_free_atoms: True
+  eval_on_free_atoms: True
+  task_num: 0
+  if_test_final: False
+
+optim:
+  robust_loss: False
+  warmup: 0
+  max_iter: 40000  #None
+  max_epochs: 500 
+  if_local: False
+  eval_every: 2000
+  batch_size: 6
+  eval_batch_size: 2 
+
+  force_coefficient: 100 #0
