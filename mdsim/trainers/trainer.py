@@ -1427,12 +1427,15 @@ class Trainer(ABC):
                                                                                      keepdims=True)
             # A->C , adversarial direction, negative sign
         else:
-            dirc1 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->C
+            #dirc1 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->C
+            dirc1 = torch.rand(batch.pos.shape).to(self.device)  # A->C
             dirc1 = mean_bond * dirc1 #/ torch.linalg.vector_norm(dirc1, dim=-1, keepdims=True) # A->C
-        dirc2 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->B
+        #dirc2 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->B
+        dirc2 = torch.rand(batch.pos.shape).to(self.device)  # A->B
         dirc2 = mean_bond * dirc2  # / torch.linalg.vector_norm(dirc2, dim=-1, keepdims=True)   # A->B
         dirc3 = dirc1 * alpha - dirc2  # B->C
-        dirc4 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->D
+        #dirc4 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->D
+        dirc4 = torch.rand(batch.pos.shape).to(self.device)  # A->D
         dirc4 = mean_bond * dirc4 #/ torch.linalg.vector_norm(dirc4, dim=-1, keepdims=True)     # A->D
         dirc5 = dirc1 - dirc4 # D->C
         if if_local:
