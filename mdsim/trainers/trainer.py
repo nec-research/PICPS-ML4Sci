@@ -1239,7 +1239,8 @@ class Trainer(ABC):
                 #mean_bond = float(torch.min(mean_bond).data.cpu()) * delta  # 2.e-3
                 mean_bond = delta  # 1 x delta [A]
                 #dirc = mean_bond * torch.rand(batch.pos.shape)  # A->C
-                dirc = 2. * torch.rand(batch.pos.shape) - 1. # A->C
+                #dirc = 2. * torch.rand(batch.pos.shape) - 1. # A->C
+                dirc = torch.rand(batch.pos.shape) # A->C
                 dirc = mean_bond * dirc  / torch.linalg.vector_norm(dirc, dim=-1, keepdims=True)  # A->C
                 _batch_data = batch.detach().clone()
                 _batch_data.pos = _batch_data.pos + dirc  # A->C
