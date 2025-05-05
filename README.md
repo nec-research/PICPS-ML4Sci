@@ -59,7 +59,7 @@ For NoisyNode model results, use `configs/base_aug.yml`.
 
 ## Infrastructure
 
-This implementation was tested under Ubuntu 20.04, Python 3.10, PyTorch > 2.01, and CUDA 11.8. 
+This implementation was tested under Ubuntu 20.04, Python 3.10, PyTorch 2.01, and CUDA 11.8. 
 
 ## Acknowledgements
 This codebase is based on the repository `mdsim` [[paper]](https://arxiv.org/abs/2210.07237) and 
