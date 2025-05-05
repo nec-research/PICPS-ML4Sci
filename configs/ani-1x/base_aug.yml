@@ -2,9 +2,7 @@ trainer: trainer
 
 dataset:
   src: DATAPATH/ani-1x
-  #name: ani1x_vanilla
-  name: ani1x_rob12c001-dlt005-L2-wm0
-  #name: ani1x_aug
+  name: ani1x_aug
   size: 1K
   normalize_labels: False
 

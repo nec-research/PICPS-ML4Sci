@@ -1,0 +1,14 @@
+model_dir: MODELPATH
+dataset_src: DATAPATH/md17/aspirin/test
+identifier: 10ps-300T-eV #300ps
+sim_type: ocp
+seed: 1234 #1234 #2345 #3456
+save_freq: 100
+steps: 600000
+max_test_points: 10000
+
+kcal: False
+T_init: 300.
+integrator: VelocityVerlet
+integrator_config: {"timestep": 0.5}
+energy_units_to_eV: 1.

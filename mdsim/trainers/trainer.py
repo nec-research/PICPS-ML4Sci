@@ -1,43 +1,47 @@
 """
+*          NAME OF THE PROGRAM THIS FILE BELONGS TO
 *
-*     SOFTWARE NAME
+*   file: trainer.py
 *
-*        File:  trainer.py
+* Authors: Makoto Takamoto (makoto.takamoto@neclab.eu)
+
+NEC Laboratories Europe GmbH, Copyright (c) 2025, All rights reserved.
+*     THIS HEADER MAY NOT BE EXTRACTED OR MODIFIED IN ANY WAY.
 *
-*     Authors: Deleted for purposes of anonymity
-*
-*     Proprietor: Deleted for purposes of anonymity --- PROPRIETARY INFORMATION
-*
-* The software and its source code contain valuable trade secrets and shall be maintained in
-* confidence and treated as confidential information. The software may only be used for
-* evaluation and/or testing purposes, unless otherwise explicitly stated in the terms of a
-* license agreement or nondisclosure agreement with the proprietor of the software.
-* Any unauthorized publication, transfer to third parties, or duplication of the object or
-* source code---either totally or in part---is strictly prohibited.
-*
-*     Copyright (c) 2024 Proprietor: Deleted for purposes of anonymity
-*     All Rights Reserved.
-*
-* THE PROPRIETOR DISCLAIMS ALL WARRANTIES, EITHER EXPRESS OR
-* IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY
-* AND FITNESS FOR A PARTICULAR PURPOSE AND THE WARRANTY AGAINST LATENT
-* DEFECTS, WITH RESPECT TO THE PROGRAM AND ANY ACCOMPANYING DOCUMENTATION.
-*
-* NO LIABILITY FOR CONSEQUENTIAL DAMAGES:
-* IN NO EVENT SHALL THE PROPRIETOR OR ANY OF ITS SUBSIDIARIES BE
-* LIABLE FOR ANY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES
-* FOR LOSS OF BUSINESS PROFITS, BUSINESS INTERRUPTION, LOSS OF INFORMATION, OR
-* OTHER PECUNIARY LOSS AND INDIRECT, CONSEQUENTIAL, INCIDENTAL,
-* ECONOMIC OR PUNITIVE DAMAGES) ARISING OUT OF THE USE OF OR INABILITY
-* TO USE THIS PROGRAM, EVEN IF the proprietor HAS BEEN ADVISED OF
-* THE POSSIBILITY OF SUCH DAMAGES.
-*
-* For purposes of anonymity, the identity of the proprietor is not given herewith.
-* The identity of the proprietor will be given once the review of the
-* conference submission is completed.
-*
-* THIS HEADER MAY NOT BE EXTRACTED OR MODIFIED IN ANY WAY.
-*
+*          PROPRIETARY INFORMATION ---
+
+SOFTWARE LICENSE AGREEMENT
+ACADEMIC OR NON-PROFIT ORGANIZATION NONCOMMERCIAL RESEARCH USE ONLY
+BY USING OR DOWNLOADING THE SOFTWARE, YOU ARE AGREEING TO THE TERMS OF THIS LICENSE AGREEMENT.  IF YOU DO NOT AGREE WITH THESE TERMS, YOU MAY NOT USE OR DOWNLOAD THE SOFTWARE.
+
+This is a license agreement ("Agreement") between your academic institution or non-profit organization or self (called "Licensee" or "You" in this Agreement) and NEC Laboratories Europe GmbH (called "Licensor" in this Agreement).  All rights not specifically granted to you in this Agreement are reserved for Licensor.
+RESERVATION OF OWNERSHIP AND GRANT OF LICENSE: Licensor retains exclusive ownership of any copy of the Software (as defined below) licensed under this Agreement and hereby grants to Licensee a personal, non-exclusive, non-transferable license to use the Software for noncommercial research purposes, without the right to sublicense, pursuant to the terms and condi\
+tions of this Agreement. NO EXPRESS OR IMPLIED LICENSES TO ANY OF LICENSOR’S PATENT RIGHTS ARE GRANTED BY THIS LICENSE. As used in this Agreement, the term "Software" means (i) the actual copy of all or any portion of code for program routines made accessible to Licensee by Licensor pursuant to this Agreement, inclusive of backups, updates, and/or merged copies \
+permitted hereunder or subsequently supplied by Licensor,  including all or any file structures, programming instructions, user interfaces and screen formats and sequences as well as any and all documentation and instructions related to it, and (ii) all or any derivatives and/or modifications created or made by You to any of the items specified in (i).
+CONFIDENTIALITY/PUBLICATIONS: Licensee acknowledges that the Software is proprietary to Licensor, and as such, Licensee agrees to receive all such materials and to use the Software only in accordance with the terms of this Agreement.  Licensee agrees to use reasonable effort to protect the Software from unauthorized use, reproduction, distribution, or publicatio\
+n. All publication materials mentioning features or use of this software must explicitly include an acknowledgement the software was developed by NEC Laboratories Europe GmbH.
+COPYRIGHT: The Software is owned by Licensor.
+PERMITTED USES:  The Software may be used for your own noncommercial internal research purposes. You understand and agree that Licensor is not obligated to implement any suggestions and/or feedback you might provide regarding the Software, but to the extent Licensor does so, you are not entitled to any compensation related thereto.
+DERIVATIVES: You may create derivatives of or make modifications to the Software, however, You agree that all and any such derivatives and modifications will be owned by Licensor and become a part of the Software licensed to You under this Agreement.  You may only use such derivatives and modifications for your own noncommercial internal research purposes, and y\
+ou may not otherwise use, distribute or copy such derivatives and modifications in violation of this Agreement.
+BACKUPS:  If Licensee is an organization, it may make that number of copies of the Software necessary for internal noncommercial use at a single site within its organization provided that all information appearing in or on the original labels, including the copyright and trademark notices are copied onto the labels of the copies.
+USES NOT PERMITTED:  You may not distribute, copy or use the Software except as explicitly permitted herein. Licensee has not been granted any trademark license as part of this Agreement. Neither the name of NEC Laboratories Europe GmbH nor the names of its contributors may be used to endorse or promote products derived from this Software without specific prior \
+written permission.
+You may not sell, rent, lease, sublicense, lend, time-share or transfer, in whole or in part, or provide third parties access to prior or present versions (or any parts thereof) of the Software.
+ASSIGNMENT: You may not assign this Agreement or your rights hereunder without the prior written consent of Licensor. Any attempted assignment without such consent shall be null and void.
+TERM: The term of the license granted by this Agreement is from Licensee's acceptance of this Agreement by downloading the Software or by using the Software until terminated as provided below.
+The Agreement automatically terminates without notice if you fail to comply with any provision of this Agreement.  Licensee may terminate this Agreement by ceasing using the Software.  Upon any termination of this Agreement, Licensee will delete any and all copies of the Software. You agree that all provisions which operate to protect the proprietary rights of L\
+icensor shall remain in force should breach occur and that the obligation of confidentiality described in this Agreement is binding in perpetuity and, as such, survives the term of the Agreement.
+FEE: Provided Licensee abides completely by the terms and conditions of this Agreement, there is no fee due to Licensor for Licensee's use of the Software in accordance with this Agreement.
+DISCLAIMER OF WARRANTIES:  THE SOFTWARE IS PROVIDED "AS-IS" WITHOUT WARRANTY OF ANY KIND INCLUDING ANY WARRANTIES OF PERFORMANCE OR MERCHANTABILITY OR FITNESS FOR A PARTICULAR USE OR PURPOSE OR OF NON-INFRINGEMENT.  LICENSEE BEARS ALL RISK RELATING TO QUALITY AND PERFORMANCE OF THE SOFTWARE AND RELATED MATERIALS.
+SUPPORT AND MAINTENANCE: No Software support or training by the Licensor is provided as part of this Agreement.
+EXCLUSIVE REMEDY AND LIMITATION OF LIABILITY: To the maximum extent permitted under applicable law, Licensor shall not be liable for direct, indirect, special, incidental, or consequential damages or lost profits related to Licensee's use of and/or inability to use the Software, even if Licensor is advised of the possibility of such damage.
+EXPORT REGULATION: Licensee agrees to comply with any and all applicable export control laws, regulations, and/or other laws related to embargoes and sanction programs administered by law.
+SEVERABILITY: If any provision(s) of this Agreement shall be held to be invalid, illegal, or unenforceable by a court or other tribunal of competent jurisdiction, the validity, legality and enforceability of the remaining provisions shall not in any way be affected or impaired thereby.
+NO IMPLIED WAIVERS: No failure or delay by Licensor in enforcing any right or remedy under this Agreement shall be construed as a waiver of any future or other exercise of such right or remedy by Licensor.
+GOVERNING LAW: This Agreement shall be construed and enforced in accordance with the laws of Germany without reference to conflict of laws principles.  You consent to the personal jurisdiction of the courts of this country and waive their rights to venue outside of Germany.
+ENTIRE AGREEMENT AND AMENDMENTS: This Agreement constitutes the sole and entire agreement between Licensee and Licensor as to the matter set forth herein and supersedes any previous agreements, understandings, and arrangements between the parties relating hereto.
+*     THIS HEADER MAY NOT BE EXTRACTED OR MODIFIED IN ANY WAY.
 """
 
 import datetime
@@ -245,9 +249,6 @@ class Trainer(ABC):
             self.if_robust_loss = self.config["optim"].get("robust_loss", False)
         else:
             self.if_robust_loss = if_robust_loss
-
-        #if self.config["optim"].get("if_neuralODE", False):
-        #    self.rhs_ODE = rhs_func().to(self.device)
 
         # AMP Scaler
         self.scaler = torch.cuda.amp.GradScaler() if amp else None
@@ -895,11 +896,6 @@ class Trainer(ABC):
                 training_state=False,
             )
             if (self.test_loader is not None) and not self.config["task"]["if_test_final"]:
-                #self.predict(
-                #    self.test_loader,
-                #    results_file="predictions",
-                #    disable_tqdm=disable_eval_tqdm,
-                #)
                 self.test_metric = self.validate(
                             split="test",
                             disable_tqdm=disable_eval_tqdm,
@@ -909,9 +905,7 @@ class Trainer(ABC):
                     print(self.config["cmd"]["results_dir"])
                     results_file_path = os.path.join(
                         self.config["cmd"]["results_dir"],
-                        #f"{self.name}_test_{self.config['task']['task_num']}.pickle",
                         f"{self.name}_"+self.expname+f"_{self.config['task']['task_num']}.pickle",
-                    #    f"{self.name}_test.npz",
                     )
                     with open(results_file_path, 'wb') as f:
                         cPickle.dump(self.test_metric, f)
@@ -950,11 +944,6 @@ class Trainer(ABC):
             # predict
             self.predictions_ef = self.predict(self.test_loader, results_file="predictions", disable_tqdm=False)
             return
-        # self.predict(
-        #    self.test_loader,
-        #    results_file="predictions",
-        #    disable_tqdm=disable_eval_tqdm,
-        # )
 
         if self.config["optim"].get("if_compile", False):  # if using torch.compile
             self.model = torch_geometric.compile(self.model)
@@ -1233,15 +1222,9 @@ class Trainer(ABC):
                 delta = self.delta
             _batch_list = []
             for batch in batch_list:
-                #nb = len(batch.natoms)
-                #mean_bond = torch.linalg.vector_norm(batch.pos.view(nb, -1, 3)[:, 1:] \
-                #                                     - batch.pos.view(nb, -1, 3)[:, :-1], dim=-1)
-                #mean_bond = float(torch.min(mean_bond).data.cpu()) * delta  # 2.e-3
                 mean_bond = delta  # 1 x delta [A]
-                #dirc = mean_bond * torch.rand(batch.pos.shape)  # A->C
-                #dirc = 2. * torch.rand(batch.pos.shape) - 1. # A->C
-                dirc = torch.rand(batch.pos.shape) # A->C
-                dirc = mean_bond * dirc  / torch.linalg.vector_norm(dirc, dim=-1, keepdims=True)  # A->C
+                dirc = mean_bond * torch.rand(batch.pos.shape)  # A->C
+                dirc = 2. * torch.rand(batch.pos.shape) - 1. # A->C
                 _batch_data = batch.detach().clone()
                 _batch_data.pos = _batch_data.pos + dirc  # A->C
                 _batch_list.append(_batch_data)
@@ -1289,7 +1272,6 @@ class Trainer(ABC):
             energy_mult = self.config["optim"].get("energy_coefficient", 1)
             if self.config["optim"].get("loss_energy", "mse") == "energy_per_atom_rmse":
                 loss.append(
-                    #energy_mult * self.loss_fn["energy"](out["energy"], energy_target, natoms)
                     energy_mult * self.loss_fn["energy"](out["energy"], energy_target) / mt.sqrt(natoms)
                 )
             else:
@@ -1375,7 +1357,6 @@ class Trainer(ABC):
 
     def _compute_robust_loss_3pt(self, out, _batch_list):   # 3pt on a triangle
         ''' assuming 1 GPU '''
-        #loss_func_robust = torch.nn.L1Loss()
         loss_func_robust = torch.nn.MSELoss()
 
         batch_list = [_batch_list[0]]
@@ -1398,11 +1379,7 @@ class Trainer(ABC):
         else:
             coef_cyc = self.coef_cyc
         if_local = self.config["optim"].get("if_local", False)
-
-        if self.config["optim"].get("cyc_reg", False):
-            alpha = self.config["optim"].get("cyc_reg")
-        else:
-            alpha = 1.
+        k_sec = self.config["optim"].get("k_cecond", False)  # if 2nd order PITC/PISC
 
         if self.config["model_attributes"].get("regress_forces", True):
             forces = out["forces"]
@@ -1422,23 +1399,22 @@ class Trainer(ABC):
         mean_bond = delta # 1 x delta [A]
         # batch_data.pos: [batch * atoms, 3]
         if if_adv:
-            #dirc1 = - mean_bond * forces / torch.linalg.vector_norm(forces, dim=-1,
             dev_force = forces - batch.force.to(self.device)
             dirc1 = - mt.sqrt(3.) * mean_bond * dev_force / torch.linalg.vector_norm(dev_force, dim=-1,
                                                                                      keepdims=True)
             # A->C , adversarial direction, negative sign
         else:
-            #dirc1 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->C
-            dirc1 = torch.rand(batch.pos.shape).to(self.device)  # A->C
+            dirc1 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->C
             dirc1 = mean_bond * dirc1 #/ torch.linalg.vector_norm(dirc1, dim=-1, keepdims=True) # A->C
-        #dirc2 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->B
-        dirc2 = torch.rand(batch.pos.shape).to(self.device)  # A->B
-        dirc2 = mean_bond * dirc2  # / torch.linalg.vector_norm(dirc2, dim=-1, keepdims=True)   # A->B
-        dirc3 = dirc1 * alpha - dirc2  # B->C
-        #dirc4 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->D
-        dirc4 = torch.rand(batch.pos.shape).to(self.device)  # A->D
-        dirc4 = mean_bond * dirc4 #/ torch.linalg.vector_norm(dirc4, dim=-1, keepdims=True)     # A->D
-        dirc5 = dirc1 - dirc4 # D->C
+
+        dirc2 = 2. * torch.rand(batch.pos.shape).to(self.device) - 1.  # A->B
+        # exact zero-mean
+        dirc1 = dirc1.reshape(nb, -1, 3) - torch.mean(dirc1.reshape(nb, -1, 3), dim=1, keepdims=True)
+        dirc2 = dirc2.reshape(nb, -1, 3) - torch.mean(dirc2.reshape(nb, -1, 3), dim=1, keepdims=True)
+        # reshape
+        dirc1 = mean_bond * dirc1.reshape(-1, 3)
+        dirc2 = mean_bond * dirc2.reshape(-1, 3)
+        dirc3 = dirc1 - dirc2  # B->C
         if if_local:
             mask = torch.ones_like(dirc1).to(self.device)
             mask_unity = rng.choice([0, 1], size=[mask.shape[0]], p=(1 - if_local, if_local))
@@ -1447,39 +1423,38 @@ class Trainer(ABC):
             dirc1 *= mask
             dirc2 *= mask
             dirc3 *= mask
-            dirc4 *= mask
-            dirc5 *= mask
+        # detach
         dirc1 = dirc1.detach()
         dirc2 = dirc2.detach()
         dirc3 = dirc3.detach()
-        dirc4 = dirc4.detach()
-        dirc5 = dirc5.detach()
 
-        if self.config["optim"].get("cyc_reg", False):
-            batch_dataC = batch.detach()  # regulation
-        else:
-            batch_dataC = batch.detach().clone()
+        batch_dataC = batch.detach().clone()
         batch_dataC.pos = batch_dataC.pos + dirc1  # A->C
         outC = self._forward([batch_dataC])
-        if self.config["optim"].get("cls_pseudo", False):  # if classical pseudo label with label
+        if self.config["optim"].get("cls_pseudo", False):  # if Cooper+(2020)
             V_AC = self._PI_extrapolate(batch.y.to(self.device), batch.force.to(self.device), dirc1, nb)  # A->C Euler
         else:
-            V_AC = out["energy"] - torch.sum(torch.einsum("ab,ab->a", dirc1, forces).view(nb, -1),
-                                             dim=-1, keepdim=False)  # A->C
+            V_AC = out["energy"] - torch.sum(
+                torch.einsum("ab,ab->a", dirc1, (1. - k_sec) * forces + k_sec * outC["forces"]).view(nb, -1),
+                dim=-1, keepdim=False)  # A->C
         loss = coef_rob * loss_func_robust(outC["energy"], V_AC)  # robust loss at C
         if self.config["model_attributes"].get("regress_forces", True) is False:
             return loss
 
         if self.config["optim"].get("two_point_consistency", False):  # if two point consistency
-            V_CA = outC["energy"] - torch.sum(torch.einsum("ab,ab->a", -dirc1, outC["forces"]).view(nb, -1),
-                                                  dim=-1, keepdim=False)  # C->A
-            loss += coef_cyc * loss_func_robust(out["energy"], V_CA)  # two point consistency loss
+            V_CA = outC["energy"] - torch.sum(torch.einsum("ab,ab->a", -dirc1, (1. - k_sec) * outC["forces"] + k_sec * forces).view(nb, -1),
+                                              dim=-1, keepdim=False)  # C->A
+
+            if self.config["optim"].get("two_point_label", False):  # if two point consistency at label value
+                # two point consistency loss with Label (Eq. A11)
+                loss += coef_cyc * loss_func_robust(batch.y.to(self.device), V_CA)
+            else:
+                # two point consistency loss (Eq. A10)
+                loss += coef_cyc * loss_func_robust(out["energy"], V_CA)
             return loss
 
-        if self.config["optim"].get("cyc_reg", False):
-            batch_dataB = batch.detach()  # regulation
-        else:
-            batch_dataB = batch.detach().clone()
+
+        batch_dataB = batch.detach().clone()
         batch_dataB.pos = batch_dataB.pos + dirc2  # A->B
 
         outB = self._forward([batch_dataB])
@@ -1494,63 +1469,16 @@ class Trainer(ABC):
                      grad_outputs=torch.ones_like(outB["energy"]).to(self.device),\
                      create_graph=True, retain_graph=True)[0]
 
-        if self.config["optim"].get("if_neuralODE_cyc", False):
-            V_BC = self._PI_extrapolate_ODE(outB["energy"], dirc3, batch_dataB, self._forward, nb,
-                                            self.device,
-                                            solver=self.config["optim"].get("neuralODE_solver", 'rk4')
-                                            )  # via NeuralODE
-        else:
-            V_BC = outB["energy"] - torch.sum(torch.einsum("ab,ab->a", dirc3, forceB),
-                                              dim=-1, keepdim=False) # B->C
+        V_BC = outB["energy"] - torch.sum(torch.einsum("ab,ab->a", dirc3, (1. - k_sec) * forceB + k_sec * outC["forces"]),
+                                          dim=-1, keepdim=False)  # B->C
         if self.config["optim"].get("consis_case", 'A') == 'A':  # if consistency 2, at C, basic
-            if self.config["optim"].get("consis_loss", 'L2') == 'L2':
-                loss += coef_cyc * loss_func_robust(outC["energy"], V_BC)  # consistency loss 2, at C, basic
-            elif self.config["optim"].get("consis_loss", 'L2') == 'relu': # consistency loss with ReLU
-                residual = torch.nn.functional.relu(
-                        torch.abs(outC["energy"] - V_BC) - torch.abs(V_BC).detach().clone() * delta ** 2)
-                loss += coef_cyc * torch.mean(residual)
+            loss += coef_cyc * loss_func_robust(outC["energy"], V_BC)  # consistency loss 2, at C, default
         elif self.config["optim"].get("consis_case", 'A') == 'B':  # if consistency 1, at C
             loss += coef_cyc * loss_func_robust(V_AC, V_BC)  # consistency loss 1, at C
         elif self.config["optim"].get("consis_case", 'A') == 'C':  # if consistency 3, at B
-            if self.config["optim"].get("if_neuralODE_cyc", False):
-                V_CB = self._PI_extrapolate_ODE(outC["energy"], -dirc3, batch_dataC, self._forward, nb,
-                                                self.device,
-                                                solver=self.config["optim"].get("neuralODE_solver", 'rk4')
-                                                )  # via NeuralODE
-            else:
-                V_CB = self._PI_extrapolate(outC["energy"], outC['forces'], -dirc3, nb)  # C->B for cyc3
+            V_CB = outC["energy"] - torch.sum(torch.einsum("ab,ab->a", -dirc3, (1. - k_sec) * outC["forces"] + k_sec * forceB),
+                                              dim=-1, keepdim=False)  # C->B for cyc3
             loss += coef_cyc * loss_func_robust(outB["energy"], V_CB)  # consistency loss 3
-        elif self.config["optim"].get("consis_case", 'A') == 'D':  # if consistency 4
-            batch_dataD = batch.detach().clone()
-            batch_dataD.pos = batch_dataD.pos + dirc4  # A->D
-
-            outD = self._forward([batch_dataD])
-            if self.config["model_attributes"].get("regress_forces", True):
-                forceD = outD["forces"]
-            else:
-                pos = batch_dataD.pos
-                pos = pos.requires_grad_(True)
-                forceD = - \
-                    grad(outputs=outD["energy"],\
-                         inputs=pos,\
-                         grad_outputs=torch.ones_like(outD["energy"]).to(self.device),\
-                         create_graph=True, retain_graph=True)[0]
-
-            if self.config["optim"].get("if_neuralODE_cyc", False):
-                V_DC = self._PI_extrapolate_ODE(outD["energy"], dirc5, batch_dataD, self._forward, nb,
-                                                self.device,
-                                                solver=self.config["optim"].get("neuralODE_solver", 'rk4')
-                                                )  # via NeuralODE
-            else:
-                V_DC = self._PI_extrapolate(outD["energy"], forceD, dirc5, nb)  # D->C Euler
-            loss += coef_cyc * loss_func_robust(V_DC, V_BC)  # consistency loss 4
-        else:  # all
-            loss += coef_cyc * loss_func_robust(outC["energy"], V_BC)   #at C
-            loss += coef_cyc * loss_func_robust(V_AC, V_BC)  # consistency loss at C from A and B
-            V_CB = self._PI_extrapolate(outC["energy"], outC['forces'], -dirc3, nb)  # C->B for cyc3
-            loss += coef_cyc * loss_func_robust(outB["energy"], V_CB)  # consistency loss at B
-            V_CA = self._PI_extrapolate(outC["energy"], outC["forces"], -dirc1, nb)  # A->C Euler
-            loss += coef_cyc * loss_func_robust(out["energy"], V_CA)  # consistency loss at A
 
         return loss
 

@@ -28,7 +28,6 @@ optim:
   warmup: 0
   max_iter: 40000  #None
   max_epochs: 500 
-  if_local: False
   eval_every: 2000
   batch_size: 6
   eval_batch_size: 2 

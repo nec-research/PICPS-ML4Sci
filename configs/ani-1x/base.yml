@@ -28,7 +28,6 @@ task:
 optim:
   robust_loss: True
   if_adv: False
-  rob_3pt: True
   coef_rob: 1.2 #1.2
   coef_cyc: 0.01 # 1.e-3
   delta: 0.05 #5.e-2
