@@ -5,7 +5,7 @@
 ## Introduction
 
 This repository provides the PyTorch implementation of _Physics-Informed Weakly Supervised Learning (PIWSL)_, 
-a method for training Machine Learning Interatomic Potentials (MLPIs) with newly proposed physics-informed 
+a method for training Machine Learning Interatomic Potentials (MLIPs) with newly proposed physics-informed 
 weakly supervised learning, accepted in ICML2025 [[Paper]](https://www.arxiv.org/abs/2408.05215). 
 
 ## Installation
